@@ -13,7 +13,8 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="worli-border-bottom bg-card py-4 px-4 md:px-8">
+      <header className="worli-border-bottom py-4 px-4 md:px-8">
+        
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <Sprout className="h-8 w-8 text-primary" />
@@ -29,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
 
-      <footer className="worli-border-top bg-card py-6 px-4 md:px-8 mt-12">
+      <footer className="worli-border-bottom py-4 px-4 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
             {t('footer.rights')}
