@@ -45,11 +45,11 @@ const BorrowerForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="name">{t('borrower.name')}</Label>
-                    <Input id="name" required />
+                    <Input id="name" placeholder={t('borrower.namePlaceholder')} required />
                   </div>
                   <div>
                     <Label htmlFor="age">{t('borrower.age')}</Label>
-                    <Input id="age" type="number" required />
+                    <Input id="age" type="number" placeholder={t('borrower.agePlaceholder')} required />
                   </div>
                 </div>
 
@@ -73,19 +73,19 @@ const BorrowerForm = () => {
 
                 <div>
                   <Label htmlFor="address">{t('borrower.address')}</Label>
-                  <Textarea id="address" required />
+                  <Textarea id="address" placeholder={t('borrower.addressPlaceholder')} required />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="occupation">{t('borrower.occupation')}</Label>
-                    <Input id="occupation" required />
+                    <Input id="occupation" placeholder={t('borrower.occupationPlaceholder')} required />
                   </div>
                   <div>
                     <Label>{t('borrower.marital')}</Label>
                     <Select>
                       <SelectTrigger>
-                        <SelectValue />
+                        <SelectValue placeholder={t('borrower.marital')} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="single">{t('borrower.single')}</SelectItem>
@@ -98,11 +98,11 @@ const BorrowerForm = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <Label htmlFor="incomeSource">{t('borrower.incomeSource')}</Label>
-                    <Input id="incomeSource" required />
+                    <Input id="incomeSource" placeholder={t('borrower.incomeSourcePlaceholder')} required />
                   </div>
                   <div>
                     <Label htmlFor="monthlyIncome">{t('borrower.monthlyIncome')}</Label>
-                    <Input id="monthlyIncome" type="number" required />
+                    <Input id="monthlyIncome" type="number" placeholder={t('borrower.monthlyIncomePlaceholder')} required />
                   </div>
                 </div>
 
@@ -122,7 +122,7 @@ const BorrowerForm = () => {
 
                 <div>
                   <Label htmlFor="motherTongue">{t('borrower.motherTongue')}</Label>
-                  <Input id="motherTongue" required />
+                  <Input id="motherTongue" placeholder={t('borrower.motherTonguePlaceholder')} required />
                 </div>
               </CardContent>
             </Card>
@@ -138,6 +138,7 @@ const BorrowerForm = () => {
                   <Input
                     id="loanAmount"
                     type="number"
+                    placeholder={t('borrower.loanAmountPlaceholder')}
                     required
                     onChange={(e) => setLoanAmount(Number(e.target.value))}
                   />
@@ -147,7 +148,7 @@ const BorrowerForm = () => {
                   <Label>{t('borrower.category')}</Label>
                   <Select>
                     <SelectTrigger>
-                      <SelectValue />
+                      <SelectValue placeholder={t('borrower.categoryPlaceholder')} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="education">{t('borrower.education')}</SelectItem>
@@ -161,7 +162,7 @@ const BorrowerForm = () => {
 
                 <div>
                   <Label htmlFor="reason">{t('borrower.reason')}</Label>
-                  <Textarea id="reason" required />
+                  <Textarea id="reason" placeholder={t('borrower.reasonPlaceholder')} required />
                 </div>
 
                 {showCollateral && (

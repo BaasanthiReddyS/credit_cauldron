@@ -6,20 +6,31 @@ const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'kn' : 'en';
+    const newLang = i18n.language.startsWith('en') ? 'kn' : 'en';
     i18n.changeLanguage(newLang);
   };
 
+  const currentLang = i18n.language.startsWith('en') ? 'en' : 'kn';
+
   return (
-    <Button
-      onClick={toggleLanguage}
-      variant="outline"
-      size="sm"
-      className="gap-2 font-medium"
-    >
-      <Languages className="h-4 w-4" />
-      {i18n.language === 'en' ? 'ಕನ್ನಡ' : 'English'}
-    </Button>
+    <div className="flex items-center gap-1 bg-muted/30 rounded-lg p-1">
+      <Button
+        onClick={() => i18n.changeLanguage('en')}
+        variant={currentLang === 'en' ? 'default' : 'ghost'}
+        size="sm"
+        className="h-8 px-3 text-xs font-semibold"
+      >
+        EN
+      </Button>
+      <Button
+        onClick={() => i18n.changeLanguage('kn')}
+        variant={currentLang === 'kn' ? 'default' : 'ghost'}
+        size="sm"
+        className="h-8 px-3 text-xs font-semibold font-kannada"
+      >
+        ಕನ್ನಡ
+      </Button>
+    </div>
   );
 };
 
