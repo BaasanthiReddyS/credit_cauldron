@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <header className="worli-border-bottom py-4 px-4 md:px-8">
+      <header className="py-4 px-4 md:px-8 shadow-md sticky top-0 bg-white z-50">
         
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
 
-      <footer className="worli-border-bottom py-4 px-4 md:px-8">
+      <footer className="py-4 px-4 md:px-8 shadow-md">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-sm text-muted-foreground">
             {t('footer.rights')}
